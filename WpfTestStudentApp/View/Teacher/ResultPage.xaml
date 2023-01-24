@@ -1,0 +1,45 @@
+﻿<Page x:Class="WpfTestStudentApp.View.Teacher.ResultPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfTestStudentApp.View.Teacher"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="PageLoaded"
+      Title="ResultPage">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.33*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <StackPanel  Orientation="Horizontal">
+
+                    <Button Click="ReloadClick" Content="Сброс"  />
+                    <ComboBox IsEditable="True" IsReadOnly="False" DisplayMemberPath="Name" SelectedIndex="0" Name="TypeComBox" Width="160" SelectionChanged="TypeComBox_SelectionChanged" />
+                    <TextBox  Width="250" Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <DataGrid AutoGenerateColumns="False" Name="DGridClient" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Тест" Binding="{Binding Test.Name}" />
+                        <DataGridTextColumn Header="Студент" Binding="{Binding Student.Fio}" />
+                        <DataGridTextColumn Header="Группа" Binding="{Binding Student.Group.Name}" />
+                        <DataGridTextColumn Header="Вопросов" Binding="{Binding Test.Amount}" />
+                        <DataGridTextColumn Header="Балов" Binding="{Binding CorrectAnswer}" />
+                        <DataGridTextColumn Header="Дата" Binding="{Binding Date}" /> 
+                        <DataGridTextColumn Header="Результат" Binding="{Binding Result}" />
+                       
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

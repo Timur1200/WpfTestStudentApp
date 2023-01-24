@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfTestStudentApp.View.Student.RunningTestsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestStudentApp.View.Student"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="TBoxInfo" Text="info" HorizontalAlignment="Center" FontSize="18" />
+            <TextBlock Name="TBoxQuestion" Text="question" HorizontalAlignment="Center" FontSize="24" />
+            <StackPanel  x:Name="checkBoxPanel">
+                <CheckBox Name="cBox1" />
+                <CheckBox Name="cBox2" />
+                <CheckBox Name="cBox3" />
+                <CheckBox Name="cBox4" />
+                <CheckBox Name="cBox5" />
+            </StackPanel>
+            <StackPanel Name="radioBtnPanel">
+                <RadioButton Name="rBtn1" />
+                <RadioButton Name="rBtn2" />
+                <RadioButton Name="rBtn3" />
+                <RadioButton Name="rBtn4" />
+                <RadioButton Name="rBtn5" />
+            </StackPanel>
+            <TextBox x:Name="TBoxAns"  />
+            <Button Click="NextClick" Content="Вперед" />
+        </StackPanel>
+    </Grid>
+</Window>
